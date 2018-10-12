@@ -22,21 +22,25 @@ int main(int argc, char const *argv[])
 	    }
 
 	    int count=0;
-	    int c=1,p=0;
+	    int c=0,p=0;
 	    int sum=0;
+	    int flag=0;
 	    
 	    while(true) {
 	        if(c<n) {
 	        	for (int i = p; i <= c; ++i)
 	        	{
 	        		sum+=arr[i];
-	        		if(sum>n)
-	        			break;
+	        		if(sum>n){
+	        		    flag=1;
+	        		    break;
+	        		}
 	        	}
-	        	//cout<<"p:"<<p<<" c:"<<c<<" sum:"<<sum<<"\n"; //Debug
-	        	p=c;
+	        	cout<<"p:"<<p<<" c:"<<c<<" sum:"<<sum<<"\n"; //Debug
+	        	p=c+1;
 	        	c=sum;
-	        	count++;
+	        	if(!flag)
+	        	    count++;
 	        }
 	        else{
 	            break;
