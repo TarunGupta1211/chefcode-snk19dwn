@@ -4,12 +4,19 @@
 //
 //https://www.codechef.com/SNCKQL19/problems/SPREAD2
 //
+//https://www.geeksforgeeks.org/fast-io-for-competitive-programming/
+//
 
-#include <iostream>
+//#include <iostream>
+#include <bits/stdc++.h>
 using namespace std;
 
 int main(int argc, char const *argv[])
 {
+	//Site says makes the input faster
+	ios_base::sync_with_stdio(false);
+    cin.tie(NULL);
+
 	int t;
 	cin>>t;
 	while(t--) {
@@ -19,6 +26,7 @@ int main(int argc, char const *argv[])
 	    for (int i = 0; i < n; ++i)
 	    {
 	    	cin>>arr[i];
+	    	//todo shift everything over here
 	    }
 
 	    int count=0;
