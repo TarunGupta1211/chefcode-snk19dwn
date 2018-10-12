@@ -24,7 +24,7 @@ int main(int argc, char const *argv[])
 	    int count=0;
 	    int c=0,p=0;
 	    int sum=0;
-	    int flag=0;
+	    bool flag=false;
 	    
 	    while(true) {
 	        if(c<n) {
@@ -32,7 +32,7 @@ int main(int argc, char const *argv[])
 	        	{
 	        		sum+=arr[i];
 	        		if(sum>n){
-	        		    flag=1;
+	        		    flag=true;
 	        		    break;
 	        		}
 	        	}
