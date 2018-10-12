@@ -30,6 +30,8 @@ int main(int argc, char const *argv[])
 	        	for (int i = p; i <= c; ++i)
 	        	{
 	        		sum+=arr[i];
+	        		if(sum>n)
+	        			break;
 	        	}
 	        	//cout<<"p:"<<p<<" c:"<<c<<" sum:"<<sum<<"\n"; //Debug
 	        	p=c;
