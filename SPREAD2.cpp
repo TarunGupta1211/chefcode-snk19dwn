@@ -22,8 +22,8 @@ int main(int argc, char const *argv[])
     while(t--) {
         int n;
         cin >> n;
-        int arr[n];
-        int count = 0;
+        int arr[n], pplLeft = n - 1;
+        int count = 0, temp = 0;
         int c = 0, p = 0;
         int sum = 0, day = 0;
         bool flag = false;
@@ -31,18 +31,33 @@ int main(int argc, char const *argv[])
         for (int i = 0; i < n; ++i) {
             cin >> arr[i];
 
-            if(sum < n) {
-                sum = sum + arr[i];
-                day++;
-            } else {
-                if(flag = false) {
-                    flag = true;
+            if(pplLeft > 0) {
+
+                sum += arr[i];
+                if(temp == 0) {
+                    temp = sum;
+                    count++;
+                    pplLeft -= sum;
                 }
+
+                temp--;
+
+                //cout<<"pplLeft:"<<pplLeft<<" sum:"<<sum<<" temp:"<<temp<<" count:"<<count<<"\n";
             }
-            printf("%d ", sum);
         }
 
-        printf("%d\n", day);
+        /*if(sum < n) {
+            sum = sum + arr[i];
+            day++;
+        } else {
+            if(flag = false) {
+                flag = true;
+            }
+        }
+        printf("%d ", sum);
+        }
+        /*/
+        printf("%d\n", count);
     }
     return 0;
 }
