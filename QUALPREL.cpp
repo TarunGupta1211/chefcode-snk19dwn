@@ -53,6 +53,8 @@ void sort(long arr[], int low, int high)
     } 
 }
 
+void search(long *arr,int,int);
+
 int main(int argc, char const *argv[])
 {
 	int t;
@@ -72,19 +74,24 @@ int main(int argc, char const *argv[])
         //for(int i=0;i<n;i++)    //check sorting
         	 //printf("%d",arr[i]);
     
-	    //get the item;
-	    int temp=arr[k-1];
+	    
 
 	    //can be better
-	    for (int i = k; i < n; ++i)
+	    search(arr,n,k);
+	}
+	return 0;
+}
+
+void search(long *arr,int n,int k){
+    //get the item;
+	    int temp=arr[k-1];
+	for (int i = k; i < n; ++i)
 	    {
 	    	if(arr[i]<temp) {
 	    		printf("%d\n",i);
 	    		break;
 	    	}
 	    }
-	}
-	return 0;
 }
 
 //Do QuickSort Here
