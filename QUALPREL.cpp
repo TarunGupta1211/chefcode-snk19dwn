@@ -18,9 +18,9 @@ void swap(long *a, long *b)
 }
 
 
-int partition (long *arr[], int low, int high)
+int partition (long arr[], int low, int high)
 {
-    long pivot = arr[high];    // pivot
+    int pivot = arr[high];    // pivot
     int i = (low - 1);  // Index of smaller element
 
     for (int j = low; j <= high - 1; j++) {
@@ -28,7 +28,7 @@ int partition (long *arr[], int low, int high)
         // equal to pivot
         if (arr[j] >= pivot) {
             i++;    // increment index of smaller element
-            swap(arr[i], arr[j]);
+            swap(&arr[i], &arr[j]);
         }
     }
     swap(&arr[i + 1], &arr[high]);
@@ -36,7 +36,7 @@ int partition (long *arr[], int low, int high)
 }
 
 
-void sort(long *arr[], int low, int high)
+void sort(long arr[], int low, int high)
 {
     if (low < high) {
         /* pi is partitioning index, arr[p] is now
@@ -55,11 +55,11 @@ void search(long *arr, int, int);
 int main(int argc, char const *argv[])
 {
     int t;
-    scanf("%d",&t);
+    cin >> t;
     while(t--) {
         int n, k;
-        scanf("%d",&n);
-        scanf("%d",&k);
+        cin >> n >> k;
+
         long arr[n];
         for (int i = 0; i < n; ++i) {
             scanf("%ld", &arr[i]);
@@ -112,6 +112,7 @@ void search(long *arr, int n, int k)
         h = l;
         //l = h - l;
     }
+
     for (int i = h+1; i < n ; ++i) {
         cout << i;
         if(arr[i] < temp) {
@@ -127,20 +128,25 @@ int binarySearch(int arr[], int l, int r, int x)
 {
     while (l <= r) {
         int m = l + (r - l) / 2;
+
         // Check if x is present at mid
         if (arr[m] == x)
             return m;
+
         // If x greater, ignore left half
         if (arr[m] < x)
             l = m + 1;
+
         // If x is smaller, ignore right half
         else
             r = m - 1;
     }
+
     // if we reach here, then element was
     // not present
     return -1;
 }
+
 //Do QuickSort Here
 void sort(int *arr,int n){
     int x;
