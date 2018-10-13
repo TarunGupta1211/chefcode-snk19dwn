@@ -27,7 +27,7 @@ int partition (int arr[], int low, int high)
     { 
         // If current element is smaller than or 
         // equal to pivot 
-        if (arr[j] <= pivot) 
+        if (arr[j] >= pivot) 
         { 
             i++;    // increment index of smaller element 
             swap(&arr[i], &arr[j]); 
@@ -70,7 +70,7 @@ int main(int argc, char const *argv[])
 	    sort(arr,0,n-1);
 	    
         //for(int i=0;i<n;i++)    //check sorting
-            //printf("%d",arr[i]);
+        	 //printf("%d",arr[i]);
     
 	    //get the item;
 	    int temp=arr[k-1];
