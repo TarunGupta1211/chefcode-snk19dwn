@@ -98,10 +98,10 @@ void search(long *arr, int n, int k)
 {
     //get the item;
     long temp = arr[k - 1];
-    int blog = ceil(log2(n - k));
+    int blog = ceil(log2(n));
     //cout<<"\nblog:"<<blog<<"\n";
     int l = k, h = n - 1, pm, m = 0;
-    while(blog--) {
+    while(blog--&&l<=h) {
         //pm = m;
         m = (l + h) / 2;
 
