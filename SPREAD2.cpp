@@ -23,38 +23,30 @@ int main(int argc, char const *argv[])
 	    int n;
 	    cin>>n;
 	    int arr[n];
+	    int count=0;
+	    int c=0,p=0;
+	    int sum=0,day=0;
+	    bool flag=false;
+	    
 	    for (int i = 0; i < n; ++i)
 	    {
 	    	cin>>arr[i];
-	    	//todo shift everything over here
+	    	if(sum<n)
+	    	{
+	    	    sum=sum+arr[i];
+	    	    day++;
+	    	}
+	    	else
+	    	{    
+	    	    if(flag=false)
+	    	    {
+	    	        flag=true;
+	    	    }
+	    	}
+	    	printf("%d ",sum);
 	    }
-
-	    int count=0;
-	    int c=0,p=0;
-	    int sum=0;
-	    bool flag=false;
 	    
-	    while(true) {
-	        if(c<n) {
-	        	for (int i = p; i <= c; ++i)
-	        	{
-	        		sum+=arr[i];
-	        		if(sum>n){
-	        		    flag=true;
-	        		    break;
-	        		}
-	        	}
-	        	cout<<"p:"<<p<<" c:"<<c<<" sum:"<<sum<<"\n"; //Debug
-	        	p=c+1;
-	        	c=sum;
-	        	if(!flag)
-	        	    count++;
-	        }
-	        else{
-	            break;
-	        }
-	    }
-	    cout<<count<<"\n";
+	    printf("%d\n",day);
 	}
 	return 0;
 }
