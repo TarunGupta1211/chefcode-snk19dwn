@@ -97,7 +97,7 @@ int main(int argc, char const *argv[])
 void search(long *arr, int n, int k)
 {
     //get the item;
-    int temp = arr[k - 1];
+    long temp = arr[k - 1];
     int blog = ceil(log2(n - k));
     //cout<<"\nblog:"<<blog<<"\n";
     int l = k, h = n - 1, pm, m = 0;
