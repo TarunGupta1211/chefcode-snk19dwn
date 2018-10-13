@@ -10,15 +10,15 @@ using namespace std;
 
 //Quick Sort then Find
 
-void swap(int* a, int* b) 
+void swap(long* a, long* b) 
 { 
-    int t = *a; 
+    long t = *a; 
     *a = *b; 
     *b = t; 
 } 
 
 
-int partition (int arr[], int low, int high) 
+int partition (long arr[], int low, int high) 
 { 
     int pivot = arr[high];    // pivot 
     int i = (low - 1);  // Index of smaller element 
@@ -38,7 +38,7 @@ int partition (int arr[], int low, int high)
 } 
   
 
-void sort(int arr[], int low, int high) 
+void sort(long arr[], int low, int high) 
 { 
     if (low < high) 
     { 
@@ -61,10 +61,10 @@ int main(int argc, char const *argv[])
 	    int n,k;
 	    cin>>n>>k;
 	    
-	    int arr[n];
+	    long arr[n];
 	    for (int i = 0; i < n; ++i)
 	    {
-	    	cin>>arr[i];
+	    	scanf("%ld",&arr[i]);
 	    }
 
 	    sort(arr,0,n-1);
@@ -79,7 +79,7 @@ int main(int argc, char const *argv[])
 	    for (int i = k; i < n; ++i)
 	    {
 	    	if(arr[i]<temp) {
-	    		cout<<i<<"\n";
+	    		printf("%d\n",i);
 	    		break;
 	    	}
 	    }
