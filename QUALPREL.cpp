@@ -117,7 +117,7 @@ void search(long *arr, int n, int k)
         //    break;
 
     }
-
+    /*
     if(h < l) {
         for (int i = h; i < n ; ++i) {
             //cout << i;
@@ -135,8 +135,8 @@ void search(long *arr, int n, int k)
             }
         }
     }
-
-    //printf("%d\n", l);
+`   */
+    printf("%d\n", l);
 }
 /*for
 int binarySearch(int arr[], int l, int r, int x)
